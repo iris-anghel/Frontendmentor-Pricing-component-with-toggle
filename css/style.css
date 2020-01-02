@@ -1,8 +1,195 @@
+:root {
+    --white: hsl(0, 100%, 100%);
+    --light: hsl(240, 78%, 98%);
+    --grey: hsl(234, 14%, 74%);
+    --blue: hsl(233, 13%, 49%);
+    --dark: hsl(232, 13%, 33%);
+    --gradientFirst: hsl(236, 72%, 79%);
+    --gradientSecond: hsl(237, 63%, 64%); 
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    
+    background: url(../images/bg-top.svg) top right no-repeat, url(../images/bg-bottom.svg) left bottom no-repeat;
+    background-color: var(--light);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 2em 5em;
+
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.price-heading {
+    color: var(--blue);
+    text-align: center;
+}
+
+.toggle-container {
+    color: var(--grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2em 0 5em 0;
+}
+
+.toggle-container > * {
+    margin: 0 1em;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--gradientSecond);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:hover {
+    background-color: var(--grey);
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--white);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+/*   
+  input:checked + .slider {
+    background-color: var(--gradientSecond);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px var(--gradientSecond);
+  } */
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+  
 
 
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    color: var(--blue);
+    text-align: center;
+    padding: 2em;
+    border-radius: 5px;
+    width: 33%;
+}
 
+.card-active {
+    color: var(--white);
+    background-image: linear-gradient(to right, var(--gradientFirst), var(--gradientSecond));
+    transform: scale(1.1);
+}
 
+.card > * {
+    margin: 0.5em 0;
+}
 
+.monthly,
+.annually {
+    font-size: 3em;
+}
+
+.card-price {
+    color: var(--dark);
+}
+
+.active-price {
+    color: var var(--white);
+}
+
+.card:first-of-type {
+    box-shadow: -5px 7px 10px -1px rgba(0,0,0,0.2);
+}
+
+.card:last-of-type {
+    box-shadow: 5px 7px 10px -1px rgba(0,0,0,0.2);
+}
+
+hr {
+    border: 1px solid var(--light);
+}
+
+.btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 1em 2em;
+    margin: 2em 0;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-image: linear-gradient(to right, var(--gradientFirst), var(--gradientSecond));
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--white);
+    color: var(--blue);
+    border: 1px solid var(--grey);
+}
+
+.btn-active {
+    background-color: var(--white);
+    color: var(--blue);
+}
+
+.btn-active:hover {
+    background-image: linear-gradient(to right, var(--gradientFirst), var(--gradientSecond));
+    color: var(--white);
+    border: 1px solid var(--white);
+}
+    
 
 
 
@@ -12,4 +199,28 @@
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+/* media queries - mobile and tablet */
+@media screen and (max-width: 769px) {
+    body {
+        height: 100%;
+        padding: 5em 1em 1em 1em;
+    }
+    .main {
+        flex-wrap: wrap;
+    }
+    .main > * {
+        margin: 2em auto;
+    }
+    .card {
+        width: 90%;
+        box-shadow: 5px 5px 10px -1px rgba(0,0,0,0.2);
+    }
+    .card:first-of-type {
+        box-shadow: 5px 5px 10px -1px rgba(0,0,0,0.2);
+    }
+    .card-active {
+        transform: scale(1);
+    }
 }
