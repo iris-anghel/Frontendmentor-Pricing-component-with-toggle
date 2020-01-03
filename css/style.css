@@ -15,14 +15,12 @@
 }
 
 body {
-    
     background: url(../images/bg-top.svg) top right no-repeat, url(../images/bg-bottom.svg) left bottom no-repeat;
     background-color: var(--light);
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     font-weight: 700;
     padding: 2em 5em;
-
     height: 100vh;
 }
 
@@ -35,7 +33,7 @@ body {
     color: var(--blue);
     text-align: center;
 }
-
+/* toggle */
 .toggle-container {
     color: var(--grey);
     display: flex;
@@ -90,23 +88,14 @@ body {
     transition: .4s;
     border-radius: 50%;
 }
-/*   
-  input:checked + .slider {
-    background-color: var(--gradientSecond);
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px var(--gradientSecond);
-  } */
   
 input:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
 }
-  
 
-
+/* cards */
 .card {
     display: flex;
     flex-direction: column;
@@ -114,7 +103,7 @@ input:checked + .slider:before {
     color: var(--blue);
     text-align: center;
     padding: 2em;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 33%;
 }
 
@@ -131,6 +120,12 @@ input:checked + .slider:before {
 .monthly,
 .annually {
     font-size: 3em;
+    align-items: center;
+    justify-content: center;
+}
+
+.annually {
+    display: none;
 }
 
 .card-price {
@@ -138,7 +133,7 @@ input:checked + .slider:before {
 }
 
 .active-price {
-    color: var var(--white);
+    color: var(--white);
 }
 
 .card:first-of-type {
@@ -153,6 +148,7 @@ hr {
     border: 1px solid var(--light);
 }
 
+/* buttons */
 .btn {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -189,9 +185,15 @@ hr {
     color: var(--white);
     border: 1px solid var(--white);
 }
-    
 
-
+/* footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 10px;
+}
 
 .attribution {
     font-size: 11px;
@@ -222,5 +224,9 @@ hr {
     }
     .card-active {
         transform: scale(1);
+    }
+    footer {
+        position: static;
+        margin-bottom: 10px;
     }
 }

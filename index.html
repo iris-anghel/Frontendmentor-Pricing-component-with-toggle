@@ -8,18 +8,19 @@
     <title>Frontend Mentor | Pricing component with toggle</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
 </head>
 
 <body>
     <header>
         <h1 class="price-heading">Our Pricing</h1>
         <div class="toggle-container">
-            <label class="price-annually" for="price-toggle-button">Annually</label>
+            <label for="price-toggle-button">Annually</label>
             <label class="switch">
-                <input id="price-toogle-button" type="checkbox">
+                <input id="price-toogle-button" type="checkbox" checked="checked">
                 <span class="slider"></span>
             </label>
-            <label class="price-monthly" for="price-toggle-button">Monthly</label>
+            <label for="price-toggle-button">Monthly</label>
         </div>
     </header>
 
@@ -27,8 +28,6 @@
         <div class="card">
             <h3>Basic</h3>
             <div class="card-price">
-                <!-- <span class="currency">&dollar;</span> 19.99
-                <span class="currency">&dollar;</span> 199.99 -->
                 <span class="monthly">
                     <small>$</small>
                     19.99
@@ -51,8 +50,6 @@
         <div class="card card-active">
             <h3>Professional</h3>
             <div class="card-price active-price">
-                <!-- <span class="currency">&dollar;</span> 24.99
-                <span class="currency">&dollar;</span> 249.99 -->
                 <span class="monthly">
                     <small>$</small>
                     24.99
@@ -75,8 +72,6 @@
         <div class="card">
             <h3>Master</h3>
             <div class="card-price">
-                <!-- <span class="currency">&dollar;</span> 39.99
-                <span class="currency">&dollar;</span> 399.99 -->
                 <span class="monthly">
                     <small>$</small>
                     39.99
@@ -95,7 +90,6 @@
             <hr>
             <button class="btn btn-primary">Learn More</button>
         </div>
-
     </main>
     <footer>
         <div class="attribution">
