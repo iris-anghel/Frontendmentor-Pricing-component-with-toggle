@@ -23,19 +23,4 @@ window.onload = function() {
     }
     
     toggleButton.addEventListener('click', toggle);
-    
-// toggleButton.addEventListener('keydown', function(e) {
-//     if (e.keyCode === 13 || e.keyCode === 32) {
-//         e.preventDefault();
-//         this.click();
-//     }
-// });
-
-// toggleButton.addEventListener('keydown', function(e) {
-//     if (e.key === 'Space') {
-//         e.preventDefault();
-//         this.click();
-//     }
-// });
-
 }
